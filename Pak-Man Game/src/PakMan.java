@@ -14,7 +14,7 @@ public class PakMan extends JPanel {
     private String pakMan; // this was set as a string because the path of the image is declared as a string
 
 
-    private ImageIcon background = new ImageIcon("images//background.jpg");
+    //private ImageIcon background = new ImageIcon("images//background.jpg");
 
 
     //This is a getter which returns the value of a private variable
@@ -67,6 +67,8 @@ public class PakMan extends JPanel {
         //addKeyListener(this);
 
     }
+
+
 
 //    @Override
 //    public void actionPerformed(ActionEvent e) {
