@@ -11,7 +11,7 @@ public class PakMan extends JPanel {
     //Player1 Attributes
     private int xPosition;
     private int yPosition;
-    private String pakMan; // this was set as a string because the path of the image is declared as a string
+    private String pakManImageFile; // this was set as a string because the path of the image is declared as a string
 
 
     //private ImageIcon background = new ImageIcon("images//background.jpg");
@@ -38,118 +38,45 @@ public class PakMan extends JPanel {
     }
 
     //This is a getter which returns the value of a private variable
-    public String getPakMan() {
-        return pakMan;
+    public String getPakManImageFile() {
+        return pakManImageFile;
     }
 
     //This is a setter used to control changes to a variable
-    public void setPakMan(String pakMan) {
-        this.pakMan = pakMan;
+    public void setPakManImageFile(String pakManImageFile) {
+        this.pakManImageFile = pakManImageFile;
     }
 
     //Constructs player1 with an position on the window and picture of their character.
-    public PakMan(int xPosition, int yPosition, String pakMan){
+    public PakMan(int xPosition, int yPosition, String pakManImageFile) {
         setxPosition(xPosition);
         setyPosition(yPosition);
-        setPakMan(pakMan);
+        setPakManImageFile(pakManImageFile);
 
     }
 
     //no args constructor with no parameters to create a default player1
-    public PakMan(){
-        this(0,0,null);
+    public PakMan() {
+        this(0, 0, null);
     }
 
-    public void createPakMan(Graphics g){
-        ImageIcon img = new ImageIcon(pakMan);
+
+    //the following added by JB to paint the Pacman image onto itself (it "is" a JPanel)
+
+    public void paintComponent(Graphics g) {
+        //System.out.println("called paintComponent() on Pacman");
+        super.paintComponent(g);
+
+        ImageIcon img = new ImageIcon(getPakManImageFile());
         //System.out.println(getxPosition() + "  " + getyPosition());
-        g.drawImage(img.getImage(),getxPosition(),getyPosition(),null);
-        //addKeyListener(this);
+        g.drawImage(img.getImage(), getxPosition() - 10, getyPosition() - 10, this);
+        g.drawImage(img.getImage(),getxPosition() - 900, getyPosition() - 430,this);
 
     }
 
-
-
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        repaint();
-//        xPosition += 0;
-//        yPosition +=  0;
-//    }
-//
-//
-//
-//    @Override
-//    public void keyTyped(KeyEvent e) {
-//
-//    }
-//
-//    @Override
-//    public void keyPressed(KeyEvent e) {
-//        //System.out.println("hi");
-//
-//
-//        if( e.getKeyCode() == KeyEvent.VK_UP){
-//            yPosition += 10;
-//
-//
-//
-//        }
-//
-//        if( e.getKeyCode() == KeyEvent.VK_DOWN){
-//            yPosition += -10;
-//
-//
-//        }
-//
-//        if( e.getKeyCode() == KeyEvent.VK_RIGHT){
-//
-//            xPosition += 10;
-//
-//
-//
-//        }
-//
-//        if( e.getKeyCode() == KeyEvent.VK_LEFT){
-//           xPosition += -10;
-//
-//
-//        }
-//
-//        repaint();
-//    }
-//
-//    @Override
-//    public void keyReleased(KeyEvent e) {
-//
-//        int code = e.getKeyCode();
-//
-//        System.out.println("hi");
-//
-//        if(code == KeyEvent.VK_UP){
-//            yPosition += 0;
-//        }
-//
-//        if(code == KeyEvent.VK_DOWN){
-//            yPosition += 0;
-//        }
-//
-//        if(code == KeyEvent.VK_RIGHT){
-//            //xPosition += 0;
-//        }
-//
-//        if(code == KeyEvent.VK_LEFT){
-//            xPosition += 0;
-//        }
-//
-//    }
-
-//    public void paint(Graphics g){
-//        g.drawImage(background.getImage(),0,0,null);
-//       createPakMan(g);
-//        //ghost1.createGhosts(g);
-//  }
-
-
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(50, 50);
+    }
 
 }
