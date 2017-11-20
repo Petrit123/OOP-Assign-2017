@@ -188,6 +188,8 @@ public class KeyboardAnimation implements ActionListener
 
         }
 
+
+
         //you can add other logic here as necessary also e.g. to check if pacman and the ghost collide etc
 
         //  Calculate new move based on the sum of the X and Y delta values

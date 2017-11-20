@@ -1,5 +1,5 @@
 /* Created by Petrit Krasinqi
-* this class to create player with the pakman character
+* this class will create the Pac-Man and Ghost character
  */
 
 import javax.swing.*;
@@ -8,13 +8,10 @@ import java.awt.*;
 public class PakMan extends JPanel {
 
 
-    //Player1 Attributes
+    //Character Attributes
     private int xPosition;
     private int yPosition;
-    private String pakManImageFile; // this was set as a string because the path of the image is declared as a string
-
-
-    //private ImageIcon background = new ImageIcon("images//background.jpg");
+    private String pakManImageFile; // this was set as a string because the path of the image is read as a string in the paintCompontent method
 
 
     //This is a getter which returns the value of a private variable
@@ -47,7 +44,7 @@ public class PakMan extends JPanel {
         this.pakManImageFile = pakManImageFile;
     }
 
-    //Constructs player1 with an position on the window and picture of their character.
+    //Constructs a character with an position on the window and picture of their character.
     public PakMan(int xPosition, int yPosition, String pakManImageFile) {
         setxPosition(xPosition);
         setyPosition(yPosition);
@@ -61,7 +58,7 @@ public class PakMan extends JPanel {
     }
 
 
-    //the following added by JB to paint the Pacman image onto itself (it "is" a JPanel)
+    //the following will  paint the character image onto itself
 
     public void paintComponent(Graphics g) {
         //System.out.println("called paintComponent() on Pacman");
@@ -70,7 +67,7 @@ public class PakMan extends JPanel {
         ImageIcon img = new ImageIcon(getPakManImageFile());
         //System.out.println(getxPosition() + "  " + getyPosition());
         g.drawImage(img.getImage(), getxPosition() - 10, getyPosition() - 10, this);
-        g.drawImage(img.getImage(),getxPosition() - 900, getyPosition() - 430,this);
+        g.drawImage(img.getImage(), getxPosition() - 900, getyPosition() - 430, this);
 
     }
 
@@ -78,5 +75,4 @@ public class PakMan extends JPanel {
     public Dimension getPreferredSize() {
         return new Dimension(50, 50);
     }
-
 }

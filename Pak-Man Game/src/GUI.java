@@ -2,25 +2,27 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class GUI extends JPanel /*implements ActionListener, KeyListener*/ {
+public class GUI extends JFrame implements ActionListener {
 
+
+    JMenu fileMenu;
 
         //creating a JFrame called frame
         private JFrame frame = new JFrame("Pak-Man");
 
 
-        private PakMan pakman = new PakMan(10, 10, "images//right.png"); /* This is inserting an image onto the JFrame
-                                                                                    I got help with this code from
-                                                                                   https://stackoverflow.com/questions/299495/how-to-add-an-image-to-a-jpanel     */
+        private PakMan pakman = new PakMan(10, 10, "images//right.png");
 
-        private PakMan ghost = new PakMan(900,430,"images//ghostright.png");
+        private PakMan ghost = new PakMan(900,430,"images//ghostleft.png");
 
 
     //// constructor
     public GUI() {
 
-        //set the frame default properties -- got some help with this from the vehicle project
+        //set the frame default properties
 
         frame.setLocation(450, 200);
         frame.setSize(1000, 560);
@@ -30,21 +32,11 @@ public class GUI extends JPanel /*implements ActionListener, KeyListener*/ {
         contentPane.setLayout(null);
         contentPane.setBackground(Color.BLACK);
 
-
-        /*JLabel pakManLabel = new JLabel(new ImageIcon("images//right.png"));
-        pakManLabel.setName("Ghost");
-        pakManLabel.setSize( pakManLabel.getPreferredSize() );
-        pakManLabel.setLocation(10, 10);
-
-        contentPane.add( pakManLabel );*/
-
         pakman.setName("Pacman");
         pakman.setLayout(null);
         pakman.setSize(pakman.getPreferredSize());
         pakman.setBackground(Color.BLACK);
         pakman.setLocation(pakman.getxPosition(), pakman.getyPosition());
-
-
 
         contentPane.add(pakman);
 
@@ -54,15 +46,14 @@ public class GUI extends JPanel /*implements ActionListener, KeyListener*/ {
         ghost.setBackground(Color.BLACK);
         ghost.setLocation(ghost.getxPosition(), ghost.getyPosition());
 
-
-        /*JLabel ghostLabel = new JLabel( new ImageIcon("images//ghostleft.png"));
-        ghostLabel.setName("Ghost");
-        ghostLabel.setSize( ghostLabel.getPreferredSize() );
-        ghostLabel.setLocation(900, 430);
-        contentPane.add( ghostLabel );*/
-
-
         contentPane.add(ghost);
+
+        createFileMenu();
+
+        JMenuBar menuBar = new JMenuBar();
+        setJMenuBar(menuBar);
+        menuBar.add(fileMenu);
+
 
 
 
@@ -89,6 +80,7 @@ public class GUI extends JPanel /*implements ActionListener, KeyListener*/ {
 
         frame.getContentPane().add(contentPane);
         frame.setVisible(true);
+        frame.add(menuBar);
 
 
 
@@ -116,6 +108,33 @@ public class GUI extends JPanel /*implements ActionListener, KeyListener*/ {
         JOptionPane.showMessageDialog(null, "Sorry " + name + " you lost ......");
 
         System.exit(0);
+    }
+
+    private void createFileMenu(){
+        fileMenu = new JMenu("File");
+
+        JMenuItem item;
+        item = new JMenuItem("Save");
+        item.addActionListener(this);
+        fileMenu.add(item);
+
+        fileMenu.addSeparator();
+        item = new JMenuItem("Quit");
+        item.addActionListener(this);
+        fileMenu.add(item);
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //String menuName;
+
+        //menuName = event.getCommand();
+
+        //if(menuName.equals("Quit")){
+          //  System.exit(0);
+        //}
+
     }
 //
 //
