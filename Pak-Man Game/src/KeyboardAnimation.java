@@ -20,6 +20,7 @@ public class KeyboardAnimation implements ActionListener
     private Map<String, Point> pressedKeys = new HashMap<String, Point>();
     boolean gameOn = true;
 
+
     public KeyboardAnimation(JComponent component, int delay)
     {
         this.component = component;
@@ -157,6 +158,8 @@ public class KeyboardAnimation implements ActionListener
 
     }
 
+
+
     //  Invoked when the Timer fires
 
     public void actionPerformed(ActionEvent e)
@@ -184,11 +187,13 @@ public class KeyboardAnimation implements ActionListener
 
             gameOn = false; //make the game stop using a boolean (otherwise key presses keep getting handled)
 
-            GUI.gameover(); //calling your gameover() method (made it static to be able to access it)
+            GUI.endGame(); //calling your endGame() method (made it static to be able to access it)
 
         }
 
+        GUI.collisionCheck();
 
+        GUI.addHighScore();
 
         //you can add other logic here as necessary also e.g. to check if pacman and the ghost collide etc
 
@@ -213,6 +218,7 @@ public class KeyboardAnimation implements ActionListener
 
 
     }
+
 
     //  Action to keep track of the key and a Point to represent the movement
     //  of the component. A null Point is specified when the key is released.

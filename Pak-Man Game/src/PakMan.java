@@ -1,17 +1,19 @@
 /* Created by Petrit Krasinqi
-* this class will create the Pac-Man and Ghost character
+* This class will create the images that appear on the JFrame
  */
 
 import javax.swing.*;
 import java.awt.*;
 
+
+//Extending from the JPanel class to inherit abstract methods
 public class PakMan extends JPanel {
 
 
     //Character Attributes
-    private int xPosition;
-    private int yPosition;
-    private String pakManImageFile; // this was set as a string because the path of the image is read as a string in the paintCompontent method
+    private int xPosition; //Each image will have an x-co-ordinate on the JFrame
+    private int yPosition; //Each image will have a y-co-ordinate on the JFrame
+    private String pakManImageFile; // this was set as a string because it will hold the  the path of the image which is read as a string in the paintCompontent method
 
 
     //This is a getter which returns the value of a private variable
@@ -53,23 +55,25 @@ public class PakMan extends JPanel {
     }
 
     //no args constructor with no parameters to create a default player1
-    public PakMan() {
+    public PakMan(int xPosition, int yPosition) {
         this(0, 0, null);
     }
 
 
-    //the following will  paint the character image onto itself
+    //the following will paint the character image onto itself -- where the painting of the images take place
 
     public void paintComponent(Graphics g) {
-        //System.out.println("called paintComponent() on Pacman");
-        super.paintComponent(g);
 
+        //This paints images on to screen
         ImageIcon img = new ImageIcon(getPakManImageFile());
         //System.out.println(getxPosition() + "  " + getyPosition());
         g.drawImage(img.getImage(), getxPosition() - 10, getyPosition() - 10, this);
         g.drawImage(img.getImage(), getxPosition() - 900, getyPosition() - 430, this);
+        g.drawImage(img.getImage(),getxPosition() - 450,getyPosition() - 180,this);
 
     }
+
+    //Overrides the getPreferredSize method -- This sets the height and width of the panels
 
     @Override
     public Dimension getPreferredSize() {

@@ -1,7 +1,11 @@
 public class PakManDriver {
 
     public static void main(String[] args)  {
-        GUI test = new GUI();
+
+        Main test2 = new Main();
+
+        //GUI test = new GUI();
+
                         }
 }
 

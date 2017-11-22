@@ -8,19 +8,26 @@ import java.awt.event.ActionListener;
 public class GUI extends JFrame implements ActionListener {
 
 
+
     JMenu fileMenu;
 
         //creating a JFrame called frame
         private JFrame frame = new JFrame("Pak-Man");
 
+        private static PakMan pakman = new PakMan(10, 10, "images//right.png");
 
-        private PakMan pakman = new PakMan(10, 10, "images//right.png");
+        private static PakMan ghost = new PakMan(900,430,"images//ghostleft.png");
 
-        private PakMan ghost = new PakMan(900,430,"images//ghostleft.png");
+         private static PakMan coin = new PakMan(450,180,"images//Gold.png");
 
+         public  static int score = 0;
+
+          private static JLabel highScore = new JLabel();
 
     //// constructor
     public GUI() {
+
+
 
         //set the frame default properties
 
@@ -30,7 +37,7 @@ public class GUI extends JFrame implements ActionListener {
 
         JPanel contentPane = new JPanel();
         contentPane.setLayout(null);
-        contentPane.setBackground(Color.BLACK);
+       contentPane.setBackground(Color.BLACK);
 
         pakman.setName("Pacman");
         pakman.setLayout(null);
@@ -38,7 +45,19 @@ public class GUI extends JFrame implements ActionListener {
         pakman.setBackground(Color.BLACK);
         pakman.setLocation(pakman.getxPosition(), pakman.getyPosition());
 
+
         contentPane.add(pakman);
+
+        coin.setName("Coin");
+        coin.setLayout(null);
+        coin.setSize(coin.getPreferredSize());
+        coin.setBackground(Color.black);
+        coin.setLocation(coin.getxPosition(), coin.getyPosition());
+
+        contentPane.add(coin);
+
+
+
 
         ghost.setName("Ghost");
         ghost.setLayout(null);
@@ -48,14 +67,25 @@ public class GUI extends JFrame implements ActionListener {
 
         contentPane.add(ghost);
 
+
+
+
+
         createFileMenu();
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
         menuBar.add(fileMenu);
 
+         highScore = new JLabel("High Score: " + score);
 
+        highScore.setSize(200,45);
+        highScore.setLocation(10,450);
+        highScore.setForeground(Color.white);
+        highScore.setBackground(Color.white);
+        highScore.setVisible(true);
 
+        contentPane.add(highScore);
 
         //Added by JB to solve the issue which exists when using multiple key-presses with the KeyListener interface
         //This solution uses what are called "key-bindings" through a class called KeyboardAnimation
@@ -81,14 +111,9 @@ public class GUI extends JFrame implements ActionListener {
         frame.getContentPane().add(contentPane);
         frame.setVisible(true);
         frame.add(menuBar);
-
-
-
-
-
+        frame.setJMenuBar(menuBar);
 
     }
-
 
 
 //    public void checkBoundaries() {
@@ -99,15 +124,58 @@ public class GUI extends JFrame implements ActionListener {
 //            gameover();
 //        }
 //    }
+
 //
-    public static void gameover() {
+
+
+
+
+
+
+    public static void addHighScore(){
+        if(pakman.getBounds().intersects(coin.getBounds())){
+
+           int newScore = score += 10;
+
+           highScore.setText("High Score: " + newScore);
+
+        }
+    }
+
+
+
+    public static void endGame() {
 
 
         String name = JOptionPane.showInputDialog("Please enter your name: ");
 
         JOptionPane.showMessageDialog(null, "Sorry " + name + " you lost ......");
 
-        System.exit(0);
+       int returnValue = JOptionPane.showConfirmDialog(null, "Would you like to play again " + name,"",JOptionPane.YES_NO_OPTION);
+       if(returnValue == 1){
+
+           System.exit(0);
+
+       }
+
+       else{
+
+
+          Main test = new Main();
+
+       }
+
+
+    }
+
+    public static void collisionCheck(){
+        if(pakman.getBounds().intersects(ghost.getBounds())){
+
+            endGame();
+
+
+        }
+
     }
 
     private void createFileMenu(){
@@ -127,13 +195,32 @@ public class GUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //String menuName;
+        String menuName;
 
-        //menuName = event.getCommand();
+        menuName = e.getActionCommand();
 
-        //if(menuName.equals("Quit")){
-          //  System.exit(0);
-        //}
+        if(menuName.equals("Quit")){
+
+            int returnValue = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit","",JOptionPane.YES_NO_OPTION);
+            if(returnValue == 0 ){
+
+                System.exit(0);
+            }
+
+            else if(returnValue == 1){
+
+                GUI test = new GUI();
+
+            }
+
+
+        }
+
+        else if(menuName.equals("Save")){
+            JOptionPane.showMessageDialog(null,"File Saved Successfully");
+            System.exit(0);
+
+        }
 
     }
 //
