@@ -47,7 +47,9 @@ public class Main extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getActionCommand().equals("How To Play")){
-                    JOptionPane.showMessageDialog(null,"This is a two player game where one player must avoid the ghost and collect as many coins as possible");
+                    JOptionPane.showMessageDialog(null,"Pak-Man\n\n This is a two player game where one player must avoid the ghost and collect as many coins as possible" +
+                    "\n\n\n\n Pak-Man Controls:\n\n Up: UP-ARROW\n DOWN: DOWN-ARROW\n LEFT: LEFT-ARROW\n RIGHT: RIGHT-ARROW\n\n\n " +
+                            "Ghost Controls:\n\n UP: W\n DOWN: S\n LEFT: A\n RIGHT: D", "How To Play",JOptionPane.PLAIN_MESSAGE );
                 }
             }
         });

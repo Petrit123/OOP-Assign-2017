@@ -183,6 +183,8 @@ public class KeyboardAnimation implements ActionListener
         if(component.getLocation().getX() <= 0 || component.getLocation().getX() >= parentWidth - component.getSize().width || component.getLocation().getY() <= 0 || component.getLocation().getY() >= parentHeight - component.getSize().height)
         {
 
+
+
             JOptionPane.showMessageDialog(null,"Game over .... You hit a wall!");
 
             gameOn = false; //make the game stop using a boolean (otherwise key presses keep getting handled)

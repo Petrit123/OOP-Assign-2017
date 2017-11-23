@@ -13,9 +13,9 @@ public class GUI extends JFrame implements ActionListener {
     //creating a JFrame called frame
     private JFrame frame = new JFrame("Pak-Man");
 
-    private static Images pakman = new Images(10, 10, "images//right.png");
+    private static Images pakman = new Images(900, 430, "images//left.png");
 
-    private static Images ghost = new Images(900, 430, "images//ghostleft.png");
+    private static Images ghost = new Images(10, 10, "images//ghostright.png");
 
     private static Images coin = new Images(450, 180, "images//Gold.png");
 
@@ -165,7 +165,7 @@ public class GUI extends JFrame implements ActionListener {
         } else {
 
 
-            Main test = new Main();
+            GUI test = new GUI();
 
         }
 
