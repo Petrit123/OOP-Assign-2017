@@ -47,7 +47,7 @@ public class Main extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getActionCommand().equals("How To Play")){
-                    JOptionPane.showMessageDialog(null,"This is a two player game where one player must avoid the ghost and collect as much coins as possible");
+                    JOptionPane.showMessageDialog(null,"This is a two player game where one player must avoid the ghost and collect as many coins as possible");
                 }
             }
         });

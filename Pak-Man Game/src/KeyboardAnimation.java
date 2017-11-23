@@ -95,7 +95,7 @@ public class KeyboardAnimation implements ActionListener
         {
             //System.out.println(component.getClass());
 
-            PakMan p = (PakMan) component;
+            Images p = (Images) component;
             p.setPakManImageFile("images//left.png");
         }
 
@@ -103,7 +103,7 @@ public class KeyboardAnimation implements ActionListener
         {
             //System.out.println(component.getClass());
 
-            PakMan p = (PakMan) component;
+            Images p = (Images) component;
             p.setPakManImageFile("images//right.png");
         }
 
@@ -111,7 +111,7 @@ public class KeyboardAnimation implements ActionListener
         {
             //System.out.println(component.getClass());
 
-            PakMan p = (PakMan) component;
+            Images p = (Images) component;
             p.setPakManImageFile("images//up.png");
         }
 
@@ -119,7 +119,7 @@ public class KeyboardAnimation implements ActionListener
         {
             //System.out.println(component.getClass());
 
-            PakMan p = (PakMan) component;
+            Images p = (Images) component;
             p.setPakManImageFile("images//down.png");
         }
 
@@ -127,7 +127,7 @@ public class KeyboardAnimation implements ActionListener
         {
             //System.out.println(component.getClass());
 
-            PakMan g = (PakMan) component;
+            Images g = (Images) component;
             g.setPakManImageFile("images//ghostup.png");
         }
 
@@ -135,7 +135,7 @@ public class KeyboardAnimation implements ActionListener
         {
             //System.out.println(component.getClass());
 
-            PakMan g = (PakMan) component;
+            Images g = (Images) component;
             g.setPakManImageFile("images//ghostdown.png");
         }
 
@@ -143,7 +143,7 @@ public class KeyboardAnimation implements ActionListener
         {
             //System.out.println(component.getClass());
 
-            PakMan g = (PakMan) component;
+            Images g = (Images) component;
             g.setPakManImageFile("images//ghostright.png");
         }
 
@@ -151,7 +151,7 @@ public class KeyboardAnimation implements ActionListener
         {
             //System.out.println(component.getClass());
 
-            PakMan g = (PakMan) component;
+            Images g = (Images) component;
             g.setPakManImageFile("images//ghostleft.png");
         }
 
@@ -195,7 +195,7 @@ public class KeyboardAnimation implements ActionListener
 
         GUI.addHighScore();
 
-        //you can add other logic here as necessary also e.g. to check if pacman and the ghost collide etc
+        GUI.ghostCoinCheck();
 
         //  Calculate new move based on the sum of the X and Y delta values
 
