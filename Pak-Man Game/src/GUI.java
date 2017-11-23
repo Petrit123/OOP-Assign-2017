@@ -4,8 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
-public class GUI extends JFrame implements ActionListener {
+public class GUI extends JFrame implements ActionListener, Serializable {
 
 
     JMenu fileMenu;
@@ -15,7 +19,7 @@ public class GUI extends JFrame implements ActionListener {
 
     private static Images pakman = new Images(900, 430, "images//left.png");
 
-    private static Images ghost = new Images(10, 10, "images//ghostright.png");
+    private static Images ghost = new Images(20, 20, "images//ghostright.png");
 
     private static Images coin = new Images(450, 180, "images//Gold.png");
 
@@ -122,6 +126,15 @@ public class GUI extends JFrame implements ActionListener {
 //
 
 
+    public void saveData() throws IOException{
+
+        ObjectOutputStream os;
+        os = new ObjectOutputStream(new FileOutputStream("Pak-Man Game.dat"));
+        os.writeObject(score);
+        os.close();
+    }
+
+
     public static void addHighScore() {
         if (pakman.getBounds().intersects(coin.getBounds())) {
 
@@ -133,11 +146,13 @@ public class GUI extends JFrame implements ActionListener {
             int newY = (int) ((int) coin.getyPosition() * Math.random() * 2.1);
 
             coin.setLocation(newX,newY);
+
             //coin.setxPosition(newX);
             //coin.setyPosition(newY);
 
         }
     }
+
 
     public static void ghostCoinCheck(){
         if(ghost.getBounds().intersects(coin.getBounds())){
@@ -153,7 +168,7 @@ public class GUI extends JFrame implements ActionListener {
     public static void endGame() {
 
 
-        String name = JOptionPane.showInputDialog("Please enter your name: ");
+        String name =JOptionPane.showInputDialog("Please enter your name: ");
 
         JOptionPane.showMessageDialog(null, "Sorry " + name + " you lost ......");
 
@@ -172,10 +187,29 @@ public class GUI extends JFrame implements ActionListener {
 
     }
 
+
     public static void collisionCheck() {
         if (pakman.getBounds().intersects(ghost.getBounds())) {
 
-            endGame();
+            JOptionPane.showMessageDialog(null,"You got caught!");
+            String name =JOptionPane.showInputDialog("Please enter your name");
+            JOptionPane.showMessageDialog(null,"Sorry " + name + " you lost");
+
+            int returnValue = JOptionPane.showConfirmDialog(null, "Would you like to play again " + name, "", JOptionPane.YES_NO_OPTION);
+            if (returnValue == 1) {
+
+                System.exit(0);
+
+            } else {
+
+
+                GUI test = new GUI();
+
+            }
+
+
+
+            //endGame();
 
 
         }
@@ -189,6 +223,7 @@ public class GUI extends JFrame implements ActionListener {
         item = new JMenuItem("Save");
         item.addActionListener(this);
         fileMenu.add(item);
+
 
         fileMenu.addSeparator();
         item = new JMenuItem("Quit");
@@ -217,10 +252,18 @@ public class GUI extends JFrame implements ActionListener {
 
 
         } else if (menuName.equals("Save")) {
+
+            try {
+                saveData();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+
             JOptionPane.showMessageDialog(null, "File Saved Successfully");
-            System.exit(0);
+            //System.exit(0);
 
         }
+
 
     }
 //

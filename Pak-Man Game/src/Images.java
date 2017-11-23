@@ -67,7 +67,7 @@ public class Images extends JPanel {
         //This paints images on to screen
         ImageIcon img = new ImageIcon(getPakManImageFile());
         g.drawImage(img.getImage(), getxPosition() - 900, getyPosition() - 430, this);
-        g.drawImage(img.getImage(), getxPosition() - 10, getyPosition() - 10, this);
+        g.drawImage(img.getImage(), getxPosition() - 20, getyPosition() - 20, this);
         g.drawImage(img.getImage(),getxPosition() - 450,getyPosition() - 180,this);
 
     }
