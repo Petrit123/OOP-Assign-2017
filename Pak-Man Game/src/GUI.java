@@ -13,6 +13,7 @@ public class GUI extends JFrame implements ActionListener, Serializable {
 
 
     JMenu fileMenu;
+    JMenu playerMenu;
 
     //creating a JFrame called frame
     private JFrame frame = new JFrame("Pak-Man");
@@ -26,6 +27,8 @@ public class GUI extends JFrame implements ActionListener, Serializable {
     private static int score = 0;
 
     private static JLabel highScore = new JLabel();
+
+    int count;
 
 
 
@@ -71,10 +74,12 @@ public class GUI extends JFrame implements ActionListener, Serializable {
 
 
         createFileMenu();
+        createPlayerMenu();
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
         menuBar.add(fileMenu);
+        menuBar.add(playerMenu);
 
         highScore = new JLabel("High Score: " + score);
 
@@ -131,8 +136,16 @@ public class GUI extends JFrame implements ActionListener, Serializable {
 
         ObjectOutputStream os;
         os = new ObjectOutputStream(new FileOutputStream("Pak-Man Game.dat"));
-        os.writeObject(score);
+        os.writeObject(highScore);
         os.close();
+    }
+
+    public void display(){
+
+        JTextArea area = new JTextArea();
+            area.setText("High Score: \n\n");
+            area.append("Highest Score " + highScore);
+            JOptionPane.showMessageDialog(null,area,"HighestScore",JOptionPane.INFORMATION_MESSAGE);
     }
 
 
@@ -233,6 +246,15 @@ public class GUI extends JFrame implements ActionListener, Serializable {
 
     }
 
+    private void createPlayerMenu(){
+        playerMenu = new JMenu("Player");
+
+        JMenuItem item;
+        item = new JMenu("Display");
+        item.addActionListener(this);
+        playerMenu.add(item);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String menuName;
@@ -263,7 +285,9 @@ public class GUI extends JFrame implements ActionListener, Serializable {
             JOptionPane.showMessageDialog(null, "File Saved Successfully");
             //System.exit(0);
 
-        }
+        } else if(menuName.equals("Display")){
+               display();
+           }
 
 
     }
