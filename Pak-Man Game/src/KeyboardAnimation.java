@@ -185,7 +185,7 @@ public class KeyboardAnimation implements ActionListener
 
 
 
-            JOptionPane.showMessageDialog(null,"Game over .... You hit a wall!");
+            JOptionPane.showMessageDialog(null,"Game over .... You hit a wall!","Wall Hit",JOptionPane.INFORMATION_MESSAGE);
 
             gameOn = false; //make the game stop using a boolean (otherwise key presses keep getting handled)
 

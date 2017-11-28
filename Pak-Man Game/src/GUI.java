@@ -28,7 +28,7 @@ public class GUI extends JFrame implements ActionListener, Serializable {
 
     private static JLabel highScore = new JLabel();
 
-    int count;
+
 
 
 
@@ -205,7 +205,7 @@ public class GUI extends JFrame implements ActionListener, Serializable {
     public static void collisionCheck() {
         if (pakman.getBounds().intersects(ghost.getBounds())) {
 
-            JOptionPane.showMessageDialog(null,"You got caught!");
+            JOptionPane.showMessageDialog(null,"You got caught!","Caught",JOptionPane.INFORMATION_MESSAGE);
             String name =JOptionPane.showInputDialog("Please enter your name");
             JOptionPane.showMessageDialog(null,"Sorry " + name + " you lost");
 
@@ -250,7 +250,7 @@ public class GUI extends JFrame implements ActionListener, Serializable {
         playerMenu = new JMenu("Player");
 
         JMenuItem item;
-        item = new JMenu("Display");
+        item = new JMenuItem("Display");
         item.addActionListener(this);
         playerMenu.add(item);
     }
