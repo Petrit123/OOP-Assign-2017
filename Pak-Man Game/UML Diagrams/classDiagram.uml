@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-380.2780030899961" y="641.4611819235226">Images</node>
+    <node x="150.3093858632676" y="790.7995365005793">KeyboardAnimation</node>
+    <node x="726.6780279203224" y="610.9872537659327">GUI</node>
+    <node x="101.30712630359207" y="1570.5735805330241">PakManDriver</node>
+    <node x="164.14779837775208" y="1343.4241019698725">Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="KeyboardAnimation" target="GUI">
+      <point x="124.0" y="209.0" />
+      <point x="310.0" y="948.0" />
+      <point x="283.9190476190476" y="948.0" />
+      <point x="0.0" y="-283.0" />
+    </edge>
+    <edge source="GUI" target="KeyboardAnimation">
+      <point x="-74.39999999999998" y="-283.0" />
+      <point x="209.51904761904763" y="948.0" />
+      <point x="186.0" y="948.0" />
+      <point x="0.0" y="209.0" />
+    </edge>
+    <edge source="PakManDriver" target="Main">
+      <point x="-60.5" y="-42.0" />
+      <point x="216.85" y="1698.0" />
+      <point x="227.1" y="1698.0" />
+      <point x="-50.25" y="42.0" />
+    </edge>
+    <edge source="KeyboardAnimation" target="Images">
+      <point x="0.0" y="-209.0" />
+      <point x="186.0" y="480.0" />
+      <point x="225.08333333333334" y="480.0" />
+      <point x="-118.33333333333331" y="227.5" />
+    </edge>
+    <edge source="Main" target="GUI">
+      <point x="-50.25" y="-42.0" />
+      <point x="227.1" y="1564.0" />
+      <point x="190.9190476190476" y="1564.0" />
+      <point x="-93.0" y="283.0" />
+    </edge>
+    <edge source="GUI" target="Images">
+      <point x="148.8" y="-283.0" />
+      <point x="432.7190476190476" y="948.0" />
+      <point x="393.5" y="948.0" />
+      <point x="393.5" y="480.0" />
+      <point x="461.75" y="480.0" />
+      <point x="118.33333333333331" y="227.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.4723590585659551" x="261.2444959443801" y="1163.5" />
+  <SelectedNodes>
+    <node>PakManDriver</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

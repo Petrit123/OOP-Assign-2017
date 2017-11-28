@@ -28,6 +28,7 @@ public class GUI extends JFrame implements ActionListener, Serializable {
     private static JLabel highScore = new JLabel();
 
 
+
     //// constructor
     public GUI() {
 
@@ -203,12 +204,12 @@ public class GUI extends JFrame implements ActionListener, Serializable {
             } else {
 
 
+                
                 GUI test = new GUI();
-
             }
 
 
-
+         
             //endGame();
 
 

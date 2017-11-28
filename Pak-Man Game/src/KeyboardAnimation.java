@@ -16,7 +16,7 @@ public class KeyboardAnimation implements ActionListener
     private final static String RELEASED = "released ";
 
     private JComponent component;
-    private Timer timer;
+    private  Timer timer;
     private Map<String, Point> pressedKeys = new HashMap<String, Point>();
     boolean gameOn = true;
 
@@ -191,13 +191,16 @@ public class KeyboardAnimation implements ActionListener
 
             GUI.endGame(); //calling your endGame() method (made it static to be able to access it)
 
+            timer.stop();
+
         }
 
-        GUI.collisionCheck();
+            GUI.collisionCheck();
 
-        GUI.addHighScore();
+            GUI.addHighScore();
 
-        GUI.ghostCoinCheck();
+            GUI.ghostCoinCheck();
+
 
         //  Calculate new move based on the sum of the X and Y delta values
 
