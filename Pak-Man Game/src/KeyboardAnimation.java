@@ -90,10 +90,10 @@ public class KeyboardAnimation implements ActionListener
             timer.stop();
         }
 
-        //added by JB - alter image on Pacman when left arrow key is pressed
+        //added by me - to alter image on Pacman when left arrow key is pressed
         if(key.equals("LEFT"))
         {
-            //System.out.println(component.getClass());
+
 
             Images p = (Images) component;
             p.setPakManImageFile("images//left.png");
@@ -101,7 +101,7 @@ public class KeyboardAnimation implements ActionListener
 
         else if(key.equals("RIGHT"))
         {
-            //System.out.println(component.getClass());
+
 
             Images p = (Images) component;
             p.setPakManImageFile("images//right.png");
@@ -109,7 +109,7 @@ public class KeyboardAnimation implements ActionListener
 
         else if(key.equals("UP"))
         {
-            //System.out.println(component.getClass());
+
 
             Images p = (Images) component;
             p.setPakManImageFile("images//up.png");
@@ -117,7 +117,7 @@ public class KeyboardAnimation implements ActionListener
 
         else if(key.equals("DOWN"))
         {
-            //System.out.println(component.getClass());
+
 
             Images p = (Images) component;
             p.setPakManImageFile("images//down.png");
@@ -125,7 +125,7 @@ public class KeyboardAnimation implements ActionListener
 
         else if(key.equals("W"))
         {
-            //System.out.println(component.getClass());
+
 
             Images g = (Images) component;
             g.setPakManImageFile("images//ghostup.png");
@@ -133,7 +133,7 @@ public class KeyboardAnimation implements ActionListener
 
         else if(key.equals("S"))
         {
-            //System.out.println(component.getClass());
+
 
             Images g = (Images) component;
             g.setPakManImageFile("images//ghostdown.png");
@@ -141,7 +141,7 @@ public class KeyboardAnimation implements ActionListener
 
         else if(key.equals("D"))
         {
-            //System.out.println(component.getClass());
+
 
             Images g = (Images) component;
             g.setPakManImageFile("images//ghostright.png");
@@ -149,7 +149,7 @@ public class KeyboardAnimation implements ActionListener
 
         else if(key.equals("A"))
         {
-            //System.out.println(component.getClass());
+
 
             Images g = (Images) component;
             g.setPakManImageFile("images//ghostleft.png");
@@ -195,11 +195,11 @@ public class KeyboardAnimation implements ActionListener
 
         }
 
-            GUI.collisionCheck();
+            GUI.collisionCheck(); //calling my collisionCheck method.
 
-            GUI.addHighScore();
+            GUI.addHighScore();  //calling my addHighScore method.
 
-            GUI.ghostCoinCheck();
+            GUI.ghostCoinCheck();  //calling my ghostCoin method.
 
 
         //  Calculate new move based on the sum of the X and Y delta values

@@ -10,10 +10,10 @@ import java.awt.*;
 public class Images extends JPanel {
 
 
-    //Character Attributes
+    //Image Attributes
     private int xPosition; //Each image will have an x-co-ordinate on the JFrame
     private int yPosition; //Each image will have a y-co-ordinate on the JFrame
-    private String pakManImageFile; // this was set as a string because it will hold the  the path of the image which is read as a string in the paintCompontent method
+    private String pakManImageFile; // this was set as a string because it will hold the  the path of the image which is read as a string in the ImageIcon method
 
 
     //This is a getter which returns the value of a private variable

@@ -104,7 +104,7 @@ public class GUI extends JFrame implements ActionListener, Serializable {
         pacManAnimation.addAction("UP", 0, -3);
         pacManAnimation.addAction("DOWN", 0, 3);
 
-        KeyboardAnimation ghostAnimation = new KeyboardAnimation(ghost, 24);
+        KeyboardAnimation ghostAnimation = new KeyboardAnimation(ghost, 34);
 
         ghostAnimation.addAction("A", -3, 0);
         ghostAnimation.addAction("D", 3, 0);
@@ -202,6 +202,8 @@ public class GUI extends JFrame implements ActionListener, Serializable {
     }
 
 
+    //Got help with this from https://stackoverflow.com/questions/23332096/how-to-detect-if-two-images-collide-in-java
+
     public static void collisionCheck() {
         if (pakman.getBounds().intersects(ghost.getBounds())) {
 
@@ -293,9 +295,9 @@ public class GUI extends JFrame implements ActionListener, Serializable {
     }
 //
 //
-//    /*This is a java paint method used to draw the images
-//    * I got help with this code from  https://stackoverflow.com/questions/299495/how-to-add-an-image-to-a-jpanel
-//     */
+// My code to get the images to move but wasn't fully functional didn't allow multiple key presses but worked to move images
+// This code didn't allow for two people to use the keyboard at the same time so John Brosnan helped with that by creating the KeyBoard Animation Class
+//It work for moving the images though
 //    public void paint(Graphics g) {
 //        pakmanCharacter.drawCharacters(g);
 //        ghostCharacter.drawCharacters(g);
