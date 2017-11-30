@@ -96,7 +96,7 @@ public class KeyboardAnimation implements ActionListener
 
 
             Images p = (Images) component;
-            p.setPakManImageFile("images//left.png");
+            p.setPakManImageFile("images//left.png");  //Added by me changes the image of pakman when left key is pressed
         }
 
         else if(key.equals("RIGHT"))
@@ -104,7 +104,7 @@ public class KeyboardAnimation implements ActionListener
 
 
             Images p = (Images) component;
-            p.setPakManImageFile("images//right.png");
+            p.setPakManImageFile("images//right.png");    //Added by me changes the image of pakman when right key is pressed
         }
 
         else if(key.equals("UP"))
@@ -112,7 +112,7 @@ public class KeyboardAnimation implements ActionListener
 
 
             Images p = (Images) component;
-            p.setPakManImageFile("images//up.png");
+            p.setPakManImageFile("images//up.png");       //Added by me changes the image of pakman when up key is pressed
         }
 
         else if(key.equals("DOWN"))
@@ -120,7 +120,7 @@ public class KeyboardAnimation implements ActionListener
 
 
             Images p = (Images) component;
-            p.setPakManImageFile("images//down.png");
+            p.setPakManImageFile("images//down.png");    //Added by me changes the image of pakman when down key is pressed
         }
 
         else if(key.equals("W"))
@@ -128,7 +128,7 @@ public class KeyboardAnimation implements ActionListener
 
 
             Images g = (Images) component;
-            g.setPakManImageFile("images//ghostup.png");
+            g.setPakManImageFile("images//ghostup.png");    //Added by me changes the image of ghost when w key is pressed
         }
 
         else if(key.equals("S"))
@@ -136,7 +136,7 @@ public class KeyboardAnimation implements ActionListener
 
 
             Images g = (Images) component;
-            g.setPakManImageFile("images//ghostdown.png");
+            g.setPakManImageFile("images//ghostdown.png");  //Added by me changes the image of ghost when s key is pressed
         }
 
         else if(key.equals("D"))
@@ -144,7 +144,7 @@ public class KeyboardAnimation implements ActionListener
 
 
             Images g = (Images) component;
-            g.setPakManImageFile("images//ghostright.png");
+            g.setPakManImageFile("images//ghostright.png");   //Added by me changes the image of ghost when d key is pressed
         }
 
         else if(key.equals("A"))
@@ -152,7 +152,7 @@ public class KeyboardAnimation implements ActionListener
 
 
             Images g = (Images) component;
-            g.setPakManImageFile("images//ghostleft.png");
+            g.setPakManImageFile("images//ghostleft.png");   //Added by me changes the image of ghost when a key is pressed
         }
 
 

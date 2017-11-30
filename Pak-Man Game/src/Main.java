@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/*Created by Petrit Krasniqi T00192719*/
+
 public class Main extends JFrame{
 
     private JFrame menu = new JFrame("Pak-Man");

@@ -1,5 +1,4 @@
-//Created by Petrit Krasniqi
-
+/*Created by Petrit Krasniqi T00192719*/
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -295,7 +294,7 @@ public class GUI extends JFrame implements ActionListener, Serializable {
     }
 //
 //
-// My code to get the images to move but wasn't fully functional didn't allow multiple key presses but worked to move images
+// This was my code to get the images to move but wasn't fully functional didn't allow multiple key presses but worked to move images
 // This code didn't allow for two people to use the keyboard at the same time so John Brosnan helped with that by creating the KeyBoard Animation Class
 //It work for moving the images though
 //    public void paint(Graphics g) {
