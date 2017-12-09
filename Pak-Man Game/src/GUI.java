@@ -148,6 +148,8 @@ public class GUI extends JFrame implements ActionListener, Serializable {
     }
 
 
+
+    //Learned how to use the getBounds method from this method https://stackoverflow.com/questions/23332096/how-to-detect-if-two-images-collide-in-java
     public static void addHighScore() {
         if (pakman.getBounds().intersects(coin.getBounds())) {
 
@@ -167,6 +169,7 @@ public class GUI extends JFrame implements ActionListener, Serializable {
     }
 
 
+    //Learned how to use the getBounds method from this method https://stackoverflow.com/questions/23332096/how-to-detect-if-two-images-collide-in-java
     public static void ghostCoinCheck(){
         if(ghost.getBounds().intersects(coin.getBounds())){
 

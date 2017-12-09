@@ -15,6 +15,7 @@ public class Main extends JFrame{
         menu.setSize(1000, 560);
         menu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+        //Learned how to add in images from this site https://stackoverflow.com/questions/299495/how-to-add-an-image-to-a-jpanel
         JLabel label = new JLabel(new ImageIcon("images//pak-man.jpg"));
         label.setSize(1000,560);
         label.setLocation(0,0);
